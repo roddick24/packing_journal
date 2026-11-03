@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 換成你的 Google 信箱；這是伺服器端的存取限制。
+    function isOwner(uid) {
+      return request.auth != null
+        && request.auth.uid == uid
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == 'YOUR_GOOGLE_EMAIL@gmail.com';
+    }
+    match /packingUsers/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['trips', 'revision', 'updatedAt'])
+        && request.resource.data.trips is list
+        && request.resource.data.revision == 1
+        && request.resource.data.updatedAt == request.time;
+      allow update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['trips', 'revision', 'updatedAt'])
+        && request.resource.data.trips is list
+        && request.resource.data.revision == resource.data.revision + 1
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+  }
+}
