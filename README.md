@@ -13,7 +13,7 @@
 
 ## 先看這裡
 
-此套程式已寫好同步流程，但沒有填入你的 Firebase 專案設定，所以**尚未連接你的雲端，也尚未實測你的帳號登入與兩台裝置同步**。完成以下設定後才會同步。未設定 Firebase 時只提供各裝置獨立的本機模式。
+此包已填入 packing-journal 的 Firebase 網頁設定，規則已指定 crystal18062@gmail.com。使用者已在 Firebase 啟用 Google、建立 Firestore、發布規則並加入 roddick24.github.io 授權網域。尚未實際驗證網站登入與兩台裝置同步，請上傳後依驗收步驟測試。
 
 GitHub Pages 上的程式碼與網頁可公開，但行李資料不放在 GitHub：資料放在 Firestore，必須透過下方安全規則限制讀寫。登入按鈕本身不構成資料存取保護。
 

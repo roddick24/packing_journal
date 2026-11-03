@@ -1,10 +1,9 @@
-// Firebase 主控台 → 專案設定 → 你的應用程式 → 網頁應用程式。
-// 僅填入網頁 firebaseConfig；不要放服務帳戶私鑰。
+// Firebase 網頁應用程式設定；存取權由 Firestore 規則限制。
 window.PACKING_FIREBASE_CONFIG = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  appId: ''
+  "apiKey": "AIzaSyA3w8FKAQ773kjtx2ja8x98VBL3jx5HDUg",
+  "authDomain": "packing-journal.firebaseapp.com",
+  "projectId": "packing-journal",
+  "storageBucket": "packing-journal.firebasestorage.app",
+  "messagingSenderId": "879601135976",
+  "appId": "1:879601135976:web:2a89b700cbf0a2e9b366dd"
 };
